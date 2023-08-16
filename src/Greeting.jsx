@@ -6,9 +6,9 @@ const Greeting = () => {
 
   useEffect(() => {
     axios
-      .get("/api/greetings/random")
+      .get("http://localhost:3001/api/v1/messages")
       .then((response) => {
-        setGreeting(response.data.greeting);
+        setGreeting(response.data.content);
       })
       .catch((error) => {
         console.error("Error fetching greeting:", error);
